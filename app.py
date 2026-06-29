@@ -43,6 +43,15 @@ def report():
         'uptime_seconds': round(time.time() - START_TIME, 2)
     })
 
+@app.get('/api/metrics')
+def metrics():
+    import random
+    return jsonify({
+        'request_count': random.randint(100, 1000),
+        'avg_response_time_ms': round(random.uniform(10, 100), 2),
+        'memory_usage_mb': round(random.uniform(50, 200), 2)
+    })
+
 if __name__ == '__main__':
     app.run(
         host='0.0.0.0',
