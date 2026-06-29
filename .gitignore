@@ -2,4 +2,4 @@
 .env
 *.log
 server.log
-*.log
+__pycache__/

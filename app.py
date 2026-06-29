@@ -53,7 +53,7 @@ def metrics():
     })
 
 @app.get('/api/status')
-def status()
+def status():
     cfg = load_config()
     routes = sorted(str(rule) for rule in app.url_map.iter_rules())
     return jsonify({
